@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Main({ onIngredientsChange }) {
+export default function Main() {
   const [darkMode, setDarkMode] = React.useState(() => {
     return localStorage.getItem("darkMode") === "true";
   });
@@ -15,12 +15,7 @@ export default function Main({ onIngredientsChange }) {
     localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
 
-  React.useEffect(() => {
-    if (onIngredientsChange) {
-      onIngredientsChange(ingredients.length);
-    }
-  }, [ingredients, onIngredientsChange]);
-
+  
   function toggleDarkMode() {
     setDarkMode((prev) => !prev);
   }
@@ -38,7 +33,9 @@ export default function Main({ onIngredientsChange }) {
   }
 
   function handleRemove(indexToRemove) {
-    setIngredient((prev) => prev.filter((_, index) => index !== indexToRemove));
+    setIngredient((prev) =>
+      prev.filter((_, index) => index !== indexToRemove)
+    );
   }
 
   async function getRecipeDetails(id) {
