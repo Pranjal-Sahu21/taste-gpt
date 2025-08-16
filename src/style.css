@@ -90,7 +90,7 @@ body.dark .get-recipe-container button:hover {
   display: block;
   margin: 0 auto 20px;
   position: fixed;
-  top: 10px;
+  top: 13px;
   right: 10px;
   z-index: 1000;
   padding: 8px 8px;
