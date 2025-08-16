@@ -9,9 +9,8 @@ export default function Recipe({ ingredients }) {
     const response = await fetch(
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=80364dead89c4508b558aca3789bf2ba`
     );
-    if (!response.ok) {
-      throw new Error("Failed to fetch recipe details.");
-    }
+    if (!response.ok) throw new Error("Failed to fetch recipe details.");
+
     return await response.json();
   }
 
@@ -31,8 +30,8 @@ export default function Recipe({ ingredients }) {
       }
 
       const recipes = await response.json();
-      if (recipes.length > 0) {
-        const detailedRecipe = await getRecipeDetails(recipes[0].id);
+      if (recipes?.length > 0) {
+        const detailedRecipe = await getRecipeDetails(recipes?.[0]?.id);
         setRecipe(detailedRecipe);
       } else {
         setError("No recipes found for the given ingredients.");
@@ -46,12 +45,14 @@ export default function Recipe({ ingredients }) {
 
   return (
     <>
-      {ingredients.length > 3 && (
+      {ingredients.length > 1 && (
         <div className="get-recipe-container">
           <div>
             <h3>Ready for a recipe?</h3>
             <p>Generate a recipe from your list of ingredients.</p>
-            <button onClick={handleGetRecipe}>Get a recipe</button>
+            <button disabled={isLoading} onClick={handleGetRecipe}>
+              Get a recipe
+            </button>
           </div>
         </div>
       )}
@@ -70,20 +71,20 @@ export default function Recipe({ ingredients }) {
 
       {recipe && (
         <div className="recipe-details">
-          <h2>{recipe.title}</h2>
-          <img src={recipe.image} alt={recipe.title} />
+          <h2>{recipe?.title}</h2>
+          <img src={recipe?.image} alt={recipe?.title} />
 
           <h3>🧂 Ingredients:</h3>
           <ul>
-            {recipe.extendedIngredients.map((item, index) => (
-              <li key={index}>{item.original}</li>
+            {recipe?.extendedIngredients?.map((item, index) => (
+              <li key={index}>{item?.original}</li>
             ))}
           </ul>
 
           <h3>👨‍🍳 Instructions:</h3>
-          {recipe.analyzedInstructions.length > 0 ? (
+          {recipe?.analyzedInstructions?.length > 0 ? (
             <ul>
-              {recipe.analyzedInstructions[0].steps.map((step) => (
+              {recipe?.analyzedInstructions?.[0]?.steps?.map((step) => (
                 <li key={step.number}>{step.step}</li>
               ))}
             </ul>

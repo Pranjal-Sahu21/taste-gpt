@@ -1,17 +1,12 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 
 export default function Main() {
-  const [darkMode, setDarkMode] = React.useState(() => {
+  const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("darkMode") === "true";
   });
 
-  const [ingredients, setIngredients] = React.useState([]);
-
-  React.useEffect(() => {
-    document.body.classList.toggle("dark", darkMode);
-    localStorage.setItem("darkMode", darkMode);
-  }, [darkMode]);
+  const [ingredients, setIngredients] = useState([]);
 
   function toggleDarkMode() {
     setDarkMode((prev) => !prev);
@@ -34,6 +29,11 @@ export default function Main() {
       prev.filter((_, index) => index !== indexToRemove)
     );
   }
+
+  useEffect(() => {
+    document.body.classList.toggle("dark", darkMode);
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
 
   return (
     <main>
@@ -71,7 +71,12 @@ export default function Main() {
         </section>
       ) : (
         <div className="empty-state">
-          <p>🥕 Start by adding your first ingredient above!</p>
+          <p>
+            🥕 Start by adding your first ingredient above! <br /> <br />
+            <p id="alert-text">
+              NOTE: Add atleast two ingredients to get a recipe.
+            </p>
+          </p>
         </div>
       )}
 
