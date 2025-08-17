@@ -47,7 +47,7 @@ body.dark .add-ingredient-form button {
 }
 
 body.dark .add-ingredient-form button:hover {
-  background-color: #ddd;
+  background-color: #e89623;
 }
 
 body.dark section {
@@ -75,15 +75,15 @@ body.dark .empty-state {
 
 body.dark .get-recipe-container {
   background-color: #444;
-  border-left: 4px solid #facc15;
+  border-left: 4px solid #ff9f05;
 }
 
 body.dark .get-recipe-container button {
-  background-color: #facc15;
-  color: #1f1f1f;
+  background-color: var(--orange);
+  color: #ffffff;
 }
 body.dark .get-recipe-container button:hover {
-  background-color: #eab308;
+  background-color: #e89623;
 }
 
 .dark-mode-toggle {
@@ -224,7 +224,7 @@ main {
   transition: background-color 0.2s;
 }
 .add-ingredient-form button:hover {
-  background-color: #33332f;
+  background-color: #e89623;
 }
 .add-ingredient-form button::before {
   content: "+";
@@ -297,7 +297,7 @@ section h2 {
   margin-top: 20px;
   padding: 20px;
   background-color: #fefce8;
-  border-left: 4px solid #facc15;
+  border-left: 4px solid #ff9f05;
   border-radius: 8px;
 }
 .get-recipe-container h3 {
@@ -309,8 +309,8 @@ section h2 {
   margin-bottom: 12px;
 }
 .get-recipe-container button {
-  background-color: #facc15;
-  color: #141413;
+  background-color: var(--orange);
+  color: #ffffff;
   padding: 8px 14px;
   border-radius: 5px;
   border: none;
@@ -319,7 +319,7 @@ section h2 {
   transition: background-color 0.2s;
 }
 .get-recipe-container button:hover {
-  background-color: #eab308;
+  background-color: #e89623;
 }
 .loader-container {
   display: flex;

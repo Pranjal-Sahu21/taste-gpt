@@ -15,12 +15,17 @@ export default function Main() {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const newIngredient = formData.get("ingredient").trim();
+    const newIngredient = formData.get("ingredient").trim().toLowerCase();
 
-    if (newIngredient) {
-      setIngredients((prev) => [...prev, newIngredient]);
+    if (!newIngredient) return;
+
+    if (ingredients.includes(newIngredient)) {
+      alert(`"${newIngredient}" is already in the list!`);
+      event.currentTarget.reset();
+      return;
     }
 
+    setIngredients((prev) => [...prev, newIngredient]);
     event.currentTarget.reset();
   }
 
@@ -74,7 +79,7 @@ export default function Main() {
           <p>
             🥕 Start by adding your first ingredient above! <br /> <br />
             <p id="alert-text">
-              NOTE: Add atleast two ingredients to get a recipe.
+              NOTE: Add at least two ingredients to get a recipe.
             </p>
           </p>
         </div>
