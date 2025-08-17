@@ -1,16 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Recipe from "./Recipe";
 
 export default function Main() {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("darkMode") === "true";
-  });
-
   const [ingredients, setIngredients] = useState([]);
-
-  function toggleDarkMode() {
-    setDarkMode((prev) => !prev);
-  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -42,17 +34,8 @@ export default function Main() {
     );
   }
 
-  useEffect(() => {
-    document.body.classList.toggle("dark", darkMode);
-    localStorage.setItem("darkMode", darkMode);
-  }, [darkMode]);
-
   return (
     <main>
-      <button className="dark-mode-toggle" onClick={toggleDarkMode}>
-        {darkMode ? "☀️" : "🌙"}
-      </button>
-
       <form className="add-ingredient-form" onSubmit={handleSubmit}>
         <input
           name="ingredient"

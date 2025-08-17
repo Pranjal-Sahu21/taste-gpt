@@ -105,7 +105,7 @@ body.dark .get-recipe-container button:hover {
 }
 
 .dark-mode-toggle:hover {
-  font-size: 1.5rem;
+  transform: scale(1.25);
 }
 
 .loader {
