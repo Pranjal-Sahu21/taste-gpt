@@ -30,6 +30,13 @@ export default function Main() {
   }
 
   function handleRemove(indexToRemove) {
+    const ingredientToRemove = ingredients[indexToRemove];
+    const confirmDelete = window.confirm(
+      `Are you sure you want to remove "${ingredientToRemove}"?`
+    );
+
+    if (!confirmDelete) return;
+
     setIngredients((prev) =>
       prev.filter((_, index) => index !== indexToRemove)
     );
