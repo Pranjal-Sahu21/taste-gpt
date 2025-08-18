@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import Main from "./MainContent";
+import Footer from "./Footer";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -17,9 +18,10 @@ export default function App() {
   }, [darkMode]);
 
   return (
-    <>
+    <div className="page-container">
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Main />
-    </>
+      <Footer/>
+    </div>
   );
 }
