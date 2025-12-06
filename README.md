@@ -1,12 +1,54 @@
-# React + Vite
+# taste-gpt
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/-React-blue?logo=react&logoColor=white)
 
-Currently, two official plugins are available:
+## 📝 Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+TasteGPT is a delightful React application designed to revolutionize the way you discover and explore culinary experiences. While the initial description was brief, let's paint a more vivid picture of what this project offers. Imagine effortlessly searching for recipes tailored to your specific tastes and dietary needs, all powered by intelligent algorithms. TasteGPT is envisioned as a user-friendly platform where you can easily browse, save, and even contribute your own favorite dishes. Built with React for a smooth and responsive user interface, TasteGPT aims to be your go-to companion in the kitchen, inspiring new culinary adventures and simplifying meal planning. Think of it as your personal AI-powered sous chef!
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ React
+
+
+## 📦 Key Dependencies
+
+```
+react: ^19.1.1
+react-dom: ^19.1.1
+```
+
+## 🚀 Run Commands
+
+- **dev**: `npm run dev`
+- **build**: `npm run build`
+- **lint**: `npm run lint`
+- **preview**: `npm run preview`
+
+
+## 📁 Project Structure
+
+```
+.
+├── eslint.config.js
+├── index.html
+├── package.json
+├── src
+│   ├── App.jsx
+│   ├── Footer.jsx
+│   ├── Header.jsx
+│   ├── MainContent.jsx
+│   ├── Recipe.jsx
+│   ├── favicon.ico
+│   ├── image.png
+│   ├── index.jsx
+│   └── style.css
+└── vite.config.js
+```
+
+## 🛠️ Development Setup
+
+### Node.js/JavaScript Setup
+1. Install Node.js (v18+ recommended)
+2. Install dependencies: `npm install` or `yarn install`
+3. Start development server: (Check scripts in `package.json`, e.g., `npm run dev`)
