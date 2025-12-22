@@ -5,9 +5,11 @@ export default function Recipe({ ingredients }) {
   const [recipe, setRecipe] = React.useState(null);
   const [error, setError] = React.useState(null);
 
+  const API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY;
+
   async function getRecipeDetails(id) {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/${id}/information?apiKey=80364dead89c4508b558aca3789bf2ba`
+      `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`
     );
     if (!response.ok) throw new Error("Failed to fetch recipe details.");
 
@@ -15,6 +17,9 @@ export default function Recipe({ ingredients }) {
   }
 
   async function handleGetRecipe() {
+
+    if(isLoading) return;
+
     setIsLoading(true);
     setError(null);
     setRecipe(null);

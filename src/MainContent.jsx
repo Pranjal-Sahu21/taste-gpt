@@ -66,11 +66,9 @@ export default function Main() {
         </section>
       ) : (
         <div className="empty-state">
-          <p>
-            🥕 Start by adding your first ingredient above! <br /> <br />
-            <p id="alert-text">
-              NOTE: Add at least two ingredients to get a recipe.
-            </p>
+          🥕 Start by adding your first ingredient above! <br /> <br />
+          <p id="alert-text">
+            NOTE: Add at least two ingredients to get a recipe.
           </p>
         </div>
       )}
